@@ -49,15 +49,27 @@
     .healthCell {
       padding: 5px;
       border-radius: 5px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 10px;
 
-      &.good {
-        background-color: #00b89c;
+      .health {
+        padding: 3px;
+        border-radius: 3px;
+        &.good {
+          background-color: #00b89c;
+        }
+        &.moderate {
+          background-color: #dbab64;
+        }
+        &.poor {
+          background-color: #db6464;
+        }
       }
-      &.moderate {
-        background-color: #dbab64;
-      }
-      &.poor {
-        background-color: #db6464;
+
+      .icon {
+        color: #db6464;
       }
     }
   }

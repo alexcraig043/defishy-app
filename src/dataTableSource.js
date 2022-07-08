@@ -1,3 +1,5 @@
+import WarningIcon from "@mui/icons-material/Warning";
+
 export const userColumns = [
   { field: "id", headerName: "Wallet", flex: 1 },
   {
@@ -16,6 +18,7 @@ export const userColumns = [
     flex: 1,
     renderCell: (params) => {
       let health;
+      let inDanger = false;
 
       try {
         if (params.row.health <= 1.1) {
@@ -25,12 +28,21 @@ export const userColumns = [
         } else {
           health = "moderate";
         }
+
+        if (params.row.health <= 1) {
+          inDanger = true;
+        }
       } catch (err) {
         console.log(err);
         health = null;
       }
 
-      return <div className={`healthCell ${health}`}>{params.row.health}</div>;
+      return (
+        <div className={"healthCell"}>
+          <div className={`health ${health}`}>{params.row.health}</div>
+          {inDanger ? <WarningIcon className="icon" /> : <></>}
+        </div>
+      );
     },
   },
 ];
