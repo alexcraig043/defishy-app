@@ -44,7 +44,17 @@ const Widget = ({ type, value }) => {
     <div className="widget">
       <span className="title">
         {data.title}
-        <Tooltip placement="top" title={data.title}>
+        <Tooltip
+          placement="top"
+          title={data.title}
+          PopperProps={{
+            sx: {
+              "& .MuiTooltip-tooltip": {
+                fontWeight: "300",
+              },
+            },
+          }}
+        >
           {data.icon}
         </Tooltip>
       </span>

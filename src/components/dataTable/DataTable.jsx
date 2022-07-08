@@ -15,6 +15,7 @@ const DataTable = () => {
         pageSize={10}
         rowsPerPageOptions={[5]}
         disableColumnMenu
+        disableSelectionOnClick
         autoHeight={true}
       />
     </div>

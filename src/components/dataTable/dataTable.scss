@@ -22,11 +22,10 @@
     }
 
     .MuiDataGrid-columnHeaders {
-      background-color: #181818;
       border-bottom: 1px solid gray;
       border-radius: 8px 8px 0px 0px;
       .MuiDataGrid-columnHeader {
-        font-size: 14px;
+        font-size: 15px;
       }
     }
 
@@ -58,18 +57,18 @@
         padding: 3px;
         border-radius: 3px;
         &.good {
-          background-color: #00b89c;
+          background-color: #1fc73b;
         }
         &.moderate {
-          background-color: #dbab64;
+          background-color: #ffa323;
         }
         &.poor {
-          background-color: #db6464;
+          background-color: #ff2d2d;
         }
       }
 
       .icon {
-        color: #db6464;
+        color: #ff2d2d;
       }
     }
   }

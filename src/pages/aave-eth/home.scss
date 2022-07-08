@@ -4,14 +4,22 @@
   .homeContainer {
     flex: 6;
 
+    .titleContainer {
+      padding: 30px 60px;
+    }
+
     .widgets {
       display: flex;
-      padding: 30px;
+      padding: 30px 60px;
       gap: 20px;
     }
 
     .data {
-      padding: 30px;
+      padding: 30px 60px;
+    }
+
+    .footer {
+      padding: 30px 60px;
     }
   }
 }
