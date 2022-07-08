@@ -1,6 +1,7 @@
 import "./widget.scss";
 import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
 import QuestionMarkOutlinedIcon from "@mui/icons-material/QuestionMarkOutlined";
+import Tooltip from "@mui/material/Tooltip";
 
 const Widget = ({ type, value }) => {
   let data;
@@ -43,10 +44,13 @@ const Widget = ({ type, value }) => {
     <div className="widget">
       <span className="title">
         {data.title}
-        {data.icon}
+        <Tooltip placement="top" title={data.title}>
+          {data.icon}
+        </Tooltip>
       </span>
       <span className="counter">
-        {data.isMoney && "$"}{data.val}
+        {data.isMoney && "$"}
+        {data.val}
       </span>
     </div>
   );
