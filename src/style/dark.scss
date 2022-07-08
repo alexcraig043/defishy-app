@@ -2,6 +2,13 @@ html {
   background-color: #101010;
 }
 
+body {
+  @font-face {
+    font-family: sans-serif;
+    src: "../assets/Avenir Next Font.ttf";
+}
+}
+
 .app.dark {
   background-color: rgb(10, 10, 10);
   color: rgb(156, 156, 156);
