@@ -2,7 +2,7 @@ import { createContext, useReducer, useEffect } from "react";
 import DarkModeReducer from "./darkModeReducer";
 
 const INITIAL_STATE = {
-  darkMode: JSON.parse(localStorage.getItem("darkMode") || false),
+  darkMode: JSON.parse(localStorage.getItem("darkMode") || true),
 };
 
 export const DarkModeContext = createContext(INITIAL_STATE);

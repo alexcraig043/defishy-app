@@ -1,43 +1,36 @@
 export const userColumns = [
-  { field: "id", headerName: "ID", width: 70, cellClassName: "super-cell" },
+  { field: "id", headerName: "Wallet", flex: 1 },
   {
-    field: "user",
-    headerName: "User",
-    width: 230,
+    field: "totalSupplied",
+    headerName: "Total Supplied (USD)",
+    flex: 1,
+  },
+  {
+    field: "totalBorrowed",
+    headerName: "Total Borrowed (USD)",
+    flex: 1,
+  },
+  {
+    field: "health",
+    headerName: "Liquidation Health",
     flex: 1,
     renderCell: (params) => {
-      return (
-        <div className="cellWithImg">
-          <img className="cellImg" src={params.row.img} alt="avatar" />
-          {params.row.username}
-        </div>
-      );
-    },
-  },
-  {
-    field: "email",
-    headerName: "Email",
-    width: 230,
-    flex: 1,
-  },
+      let health;
 
-  {
-    field: "age",
-    headerName: "Age",
-    width: 100,
-    flex: 1,
-  },
-  {
-    field: "status",
-    headerName: "Status",
-    width: 160,
-    flex: 1,
-    renderCell: (params) => {
-      return (
-        <div className={`cellWithStatus ${params.row.status}`}>
-          {params.row.status}
-        </div>
-      );
+      try {
+        if (params.row.health <= 1.1) {
+          health = "poor";
+        } else if (params.row.health > 1.5) {
+          health = "good";
+        } else {
+          health = "moderate";
+        }
+      } catch (err) {
+        console.log(err);
+        health = null;
+      }
+
+      return <div className={`healthCell ${health}`}>{params.row.health}</div>;
     },
   },
 ];
@@ -45,83 +38,75 @@ export const userColumns = [
 //temporary data
 export const userRows = [
   {
-    id: 1,
-    username: "Snow",
-    img: "https://images.pexels.com/photos/1820770/pexels-photo-1820770.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
-    status: "active",
-    email: "1snow@gmail.com",
-    age: 35,
+    id: "0x0E93388CD7a1Ec5f80A60EE3bc593C7Bc4CCd081",
+    totalSupplied: "$1,953,128",
+    totalBorrowed: "$1,353,128",
+    health: 1.1,
   },
   {
-    id: 2,
-    username: "Jamie Lannister",
-    img: "https://images.pexels.com/photos/1820770/pexels-photo-1820770.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
-    email: "2snow@gmail.com",
-    status: "passive",
-    age: 42,
+    id: "0x0E93388CD7a1Ec5f80A60EE3bc593C7Bc4CCd082",
+    totalSupplied: "$1,953,128",
+    totalBorrowed: "$1,353,128",
+    health: 0.8,
   },
   {
-    id: 3,
-    username: "Lannister",
-    img: "https://images.pexels.com/photos/1820770/pexels-photo-1820770.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
-    email: "3snow@gmail.com",
-    status: "pending",
-    age: 45,
+    id: "0x0E93388CD7a1Ec5f80A60EE3bc593C7Bc4CCd083",
+    totalSupplied: "$1,953,128",
+    totalBorrowed: "$1,353,128",
+    health: 0.6,
   },
   {
-    id: 4,
-    username: "Stark",
-    img: "https://images.pexels.com/photos/1820770/pexels-photo-1820770.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
-    email: "4snow@gmail.com",
-    status: "active",
-    age: 16,
+    id: "0x0E93388CD7a1Ec5f80A60EE3bc593C7Bc4CCd084",
+    totalSupplied: "$1,953,128",
+    totalBorrowed: "$1,353,128",
+    health: 3.1,
   },
   {
-    id: 5,
-    username: "Targaryen",
-    img: "https://images.pexels.com/photos/1820770/pexels-photo-1820770.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
-    email: "5snow@gmail.com",
-    status: "passive",
-    age: 22,
+    id: "0x0E93388CD7a1Ec5f80A60EE3bc593C7Bc4CCd085",
+    totalSupplied: "$1,953,128",
+    totalBorrowed: "$1,353,128",
+    health: 2.3,
   },
   {
-    id: 6,
-    username: "Melisandre",
-    img: "https://images.pexels.com/photos/1820770/pexels-photo-1820770.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
-    email: "6snow@gmail.com",
-    status: "active",
-    age: 15,
+    id: "0x0E93388CD7a1Ec5f80A60EE3bc593C7Bc4CCd086",
+    totalSupplied: "$1,953,128",
+    totalBorrowed: "$1,353,128",
+    health: 1.5,
   },
   {
-    id: 7,
-    username: "Clifford",
-    img: "https://images.pexels.com/photos/1820770/pexels-photo-1820770.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
-    email: "7snow@gmail.com",
-    status: "passive",
-    age: 44,
+    id: "0x0E93388CD7a1Ec5f80A60EE3bc593C7Bc4CCd087",
+    totalSupplied: "$1,953,128",
+    totalBorrowed: "$1,353,128",
+    health: 1.3,
   },
   {
-    id: 8,
-    username: "Frances",
-    img: "https://images.pexels.com/photos/1820770/pexels-photo-1820770.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
-    email: "8snow@gmail.com",
-    status: "active",
-    age: 36,
+    id: "0x0E93388CD7a1Ec5f80A60EE3bc593C7Bc4CCd088",
+    totalSupplied: "$1,953,128",
+    totalBorrowed: "$1,353,128",
+    health: 1.8,
   },
   {
-    id: 9,
-    username: "Roxie",
-    img: "https://images.pexels.com/photos/1820770/pexels-photo-1820770.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
-    email: "snow@gmail.com",
-    status: "pending",
-    age: 65,
+    id: "0x0E93388CD7a1Ec5f80A60EE3bc593C7Bc4CCd0839",
+    totalSupplied: "$1,953,128",
+    totalBorrowed: "$1,353,128",
+    health: 1.2,
   },
   {
-    id: 10,
-    username: "Roxie",
-    img: "https://images.pexels.com/photos/1820770/pexels-photo-1820770.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
-    email: "snow@gmail.com",
-    status: "active",
-    age: 65,
+    id: "0x0E93388CD7a1Ec5f80A60EE3bc593C7Bc4CCd093",
+    totalSupplied: "$1,953,128",
+    totalBorrowed: "$1,353,128",
+    health: 1.1,
+  },
+  {
+    id: "0x0E93388CD7a1Ec5f80A60EE3bc593C7Bc4CCd094",
+    totalSupplied: "$1,953,128",
+    totalBorrowed: "$1,353,128",
+    health: 1.9,
+  },
+  {
+    id: "0x0E93388CD7a1Ec5f80A60EE3bc593C7Bc4CCd095",
+    totalSupplied: "$1,953,128",
+    totalBorrowed: "$1,353,128",
+    health: 1.0,
   },
 ];

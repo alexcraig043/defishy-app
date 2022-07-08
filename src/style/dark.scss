@@ -1,5 +1,9 @@
+html {
+  background-color: #101010;
+}
+
 .app.dark {
-  background-color: #222;
+  background-color: rgb(10, 10, 10);
   color: rgb(156, 156, 156);
 
   .chartGrid {
@@ -7,7 +11,7 @@
   }
 
   .table {
-    background-color: #222;
+    background-color: rgb(10, 10, 10);
 
     .tableCell {
       color: gray;
@@ -24,7 +28,7 @@
   }
 
   .sidebar {
-    background-color: #222;
+    background-color: rgb(10, 10, 10);
     border-color: #333;
 
     .top {
@@ -48,13 +52,8 @@
 
   .dataTable {
     .dataGrid {
-        color: gray;
-        border: none;
-
-        .viewButton,.deleteButton,.cellWithStatus {
-            color: gray;
-            border: none;
-        }
+      color: gray;
+      border: none;
     }
   }
   input {

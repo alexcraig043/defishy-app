@@ -1,38 +1,9 @@
 .dataTable {
-  height: 600px;
-  margin: 20px;
-  -webkit-box-shadow: 2px 4px 10px -1px rgba(0, 0, 0, 0.47);
-  box-shadow: 2px 4px 10px -1px rgba(201, 201, 201, 0.75);
   padding: 20px;
+  background-color: #101010;
   border-radius: 15px;
   display: flex;
   flex-direction: column;
-  flex: 1;
-
-  .dataTableTitle {
-    width: 100%;
-    font-size: 24px;
-    color: gray;
-    display: flex;
-    text-align: center;
-    justify-content: right;
-    gap: 15px;
-
-    .link {
-      text-decoration: none;
-      font-size: 16px;
-      font-weight: 400;
-      border: 1px solid green;
-      color: green;
-      padding: 5px;
-      border-radius: 5px;
-      cursor: pointer;
-
-      &:hover {
-        background-color: rgba(0, 128, 0, 0.158);
-      }
-    }
-  }
 
   .dataGrid {
     &.MuiDataGrid-root .MuiDataGrid-columnHeader:focus,
@@ -40,55 +11,53 @@
       outline: none;
     }
 
-    .cellWithImg {
-      display: flex;
-      align-items: center;
+    .MuiDataGrid-cell {
+      color: white;
+    }
 
-      .cellImg {
-        width: 32px;
-        height: 32px;
-        border-radius: 50%;
-        object-fit: cover;
-        margin-right: 20px;
+    .MuiButtonBase-root {
+      .MuiSvgIcon-root {
+        color: gray;
       }
     }
 
-    .cellWithStatus {
+    .MuiDataGrid-columnHeaders {
+      background-color: #181818;
+      border-bottom: 1px solid gray;
+      border-radius: 8px 8px 0px 0px;
+      .MuiDataGrid-columnHeader {
+        font-size: 14px;
+      }
+    }
+
+    .MuiToolbar-root {
+      color: gray;
+    }
+
+    .MuiDataGrid-cell {
+      border-bottom: none;
+    }
+
+    .MuiDataGrid-columnSeparator {
+      display: none;
+    }
+
+    .MuiDataGrid-footerContainer {
+      border: none;
+    }
+
+    .healthCell {
       padding: 5px;
       border-radius: 5px;
 
-      &.active {
-        color: green;
-        background-color: rgba(0, 128, 0, 0.161);
+      &.good {
+        background-color: #00b89c;
       }
-      &.pending {
-        color: goldenrod;
-        background-color: rgba(218, 165, 32, 0.153);
+      &.moderate {
+        background-color: #dbab64;
       }
-      &.passive {
-        color: coral;
-        background-color: rgba(255, 127, 80, 0.149);
-      }
-    }
-
-    .cellAction {
-      display: flex;
-      align-items: center;
-      gap: 15px;
-
-      .viewButton {
-        padding: 2px 5px;
-        border-radius: 5px;
-        color: darkblue;
-        border: 1px solid rgba(0, 0, 139, 0.217);
-        cursor: pointer;
-      }
-      .deleteButton {
-        padding: 2px 5px;
-        border-radius: 5px;
-        color: crimson;
-        border: 1px solid rgba(220, 20, 60, 0.21);
-        cursor: pointer;
+      &.poor {
+        background-color: #db6464;
       }
     }
   }

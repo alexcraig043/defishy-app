@@ -1,72 +1,33 @@
 import "./widget.scss";
-import KeyboardArrowUpOutlinedIcon from "@mui/icons-material/KeyboardArrowUpOutlined";
-import PersonOutlinedIcon from "@mui/icons-material/PersonOutlined";
-import { ShoppingCartOutlined } from "@mui/icons-material";
-import AttachMoneyOutlinedIcon from "@mui/icons-material/AttachMoneyOutlined";
-import AccountBalanceWalletOutlinedIcon from "@mui/icons-material/AccountBalanceWalletOutlined";
+import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
 import QuestionMarkOutlinedIcon from "@mui/icons-material/QuestionMarkOutlined";
 
-const Widget = ({ type }) => {
+const Widget = ({ type, value }) => {
   let data;
 
-  //temporary
-  const amount = 100;
-  const diff = 20;
-
   switch (type) {
-    case "user":
+    case "activeWallets":
       data = {
-        title: "USERS",
+        title: "Active Wallets",
         isMoney: false,
-        link: "See all users",
-        icon: (
-          <PersonOutlinedIcon
-            className="icon"
-            style={{ color: "crimson", backgroundColor: "rgba(255,0,0,0.2)" }}
-          />
-        ),
+        val: value,
+        icon: <InfoOutlinedIcon className="icon" />,
       };
       break;
-    case "order":
+    case "riskWallets":
       data = {
-        title: "ORDERS",
+        title: "Wallets at Risk",
         isMoney: false,
-        link: "View all orders",
-        icon: (
-          <ShoppingCartOutlined
-            className="icon"
-            style={{
-              color: "goldenrod",
-              backgroundColor: "rgba(218,165,32,0.2)",
-            }}
-          />
-        ),
+        val: value,
+        icon: <InfoOutlinedIcon className="icon" />,
       };
       break;
-    case "earning":
+    case "collateralAtRisk":
       data = {
-        title: "EARNINGS",
+        title: "Collateral Value at Risk",
         isMoney: true,
-        link: "View net earnings",
-        icon: (
-          <AttachMoneyOutlinedIcon
-            className="icon"
-            style={{ color: "green", backgroundColor: "rgba(0,128,0,0.2)" }}
-          />
-        ),
-      };
-      break;
-    case "balance":
-      data = {
-        title: "BALANCE",
-        isMoney: true,
-        link: "See details",
-        icon: (
-          <AccountBalanceWalletOutlinedIcon
-            className="icon"
-            style={{ color: "purple", backgroundColor: "rgba(128,0,128,0.2)" }}
-          />
-        ),
+        val: value,
+        icon: <InfoOutlinedIcon className="icon" />,
       };
       break;
     default:
@@ -80,20 +41,13 @@ const Widget = ({ type }) => {
   }
   return (
     <div className="widget">
-      <div className="left">
-        <span className="title">{data.title}</span>
-        <span className="counter">
-          {data.isMoney && "$"} {amount}
-        </span>
-        <span className="link">{data.link}</span>
-      </div>
-      <div className="right">
-        <div className="percentage positive">
-          <KeyboardArrowUpOutlinedIcon />
-          {diff} %
-        </div>
+      <span className="title">
+        {data.title}
         {data.icon}
-      </div>
+      </span>
+      <span className="counter">
+        {data.isMoney && "$"}{data.val}
+      </span>
     </div>
   );
 };

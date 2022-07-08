@@ -1,0 +1,57 @@
+.header {
+  height: 10vh;
+  background-color: #101010;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+
+  .wrapper {
+    width: 100%;
+    padding: 20px;
+    margin: 10px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .defishyLogo {
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      .title {
+        color: #533cd9;
+        font-weight: 700;
+        font-size: 3.5vh;
+      }
+      .logo {
+        height: 5vh;
+        width: auto;
+        object-fit: cover;
+      }
+    }
+
+    .marketSelect {
+      background: #533cd9;
+      border-radius: 24px;
+      padding: .5vh;
+
+      .marketSelectContainer {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        gap: 1vw;
+        margin: .5vh 2vh;
+
+        .logo {
+          height: 4vh;
+          width: auto;
+        }
+        .platformName {
+          color: white;
+          font-weight: 300;
+          font-size: 2vh;
+        }
+      }
+    }
+  }
+}
