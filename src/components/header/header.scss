@@ -1,5 +1,5 @@
 .header {
-  height: 10vh;
+  height: 8vh;
   background-color: #101010;
   display: flex;
   align-items: center;
@@ -21,10 +21,10 @@
       .title {
         color: #533cd9;
         font-weight: 700;
-        font-size: 3.5vh;
+        font-size: 3vh;
       }
       .logo {
-        height: 5vh;
+        height: 4.5vh;
         width: auto;
         object-fit: cover;
       }
@@ -39,11 +39,11 @@
         display: flex;
         justify-content: space-around;
         align-items: center;
-        gap: 1vw;
+        gap: 15px;
         margin: .5vh 2vh;
 
         .logo {
-          height: 4vh;
+          height: 3.5vh;
           width: auto;
         }
         .platformName {

@@ -16,13 +16,13 @@ const Footer = () => {
       </div>
       <div className="right">
         <div className="item">
-          <img src={Discordlogo} alt="" className="svgIcon" id="discordIcon" />
+          <img src={Discordlogo} alt="" className="svgIcon" />
           Discord
         </div>
-        <div className="item">
+        {/* <div className="item">
           <TwitterIcon className="icon" />
           Twitter
-        </div>
+        </div> */}
         <div className="item">
           <ArticleIcon className="icon" />
           Docs
