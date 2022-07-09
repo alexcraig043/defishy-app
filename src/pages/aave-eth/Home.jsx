@@ -12,7 +12,10 @@ const Home = () => {
       <div className="homeContainer">
         <Navbar />
         <div className="titleContainer">
-          <Title logo={Aavelogo} content="Aave • Ethereum Market" />
+          <Title
+            logo={Aavelogo}
+            content={{ t1: "Aave", t2: "Ethereum Market" }}
+          />
         </div>
         <div className="widgets">
           <Widget type="activeWallets" value="729" />
@@ -23,7 +26,7 @@ const Home = () => {
           <DataTable />
         </div>
         <div className="footer">
-          <Footer />  
+          <Footer />
         </div>
       </div>
     </div>

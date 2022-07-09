@@ -1,5 +1,5 @@
 .dataTable {
-  padding: 20px;
+  padding: 0px;
   background-color: #101010;
   border-radius: 15px;
   border: 0.5px #222 solid;
@@ -23,11 +23,19 @@
     }
 
     .MuiDataGrid-columnHeaders {
-      border-bottom: 1px solid gray;
-      border-radius: 8px 8px 0px 0px;
+      background-color: #181818;
+      border-bottom: none;
+      border-radius: 10px 10px 0px 0px;
+      padding: 0px 20px;
       .MuiDataGrid-columnHeader {
-        font-size: 15px;
+        font-size: 14px;
+        font-weight: 200;
       }
+    }
+
+    .MuiDataGrid-virtualScrollerContent {
+      padding: 15px 20px;
+      padding-bottom: 0px;
     }
 
     .MuiToolbar-root {
@@ -55,8 +63,8 @@
       gap: 10px;
 
       .health {
-        padding: 3px;
-        border-radius: 3px;
+        padding: 3px 8px;
+        border-radius: 5px;
         &.good {
           background-color: #1fc73b;
         }

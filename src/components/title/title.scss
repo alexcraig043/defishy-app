@@ -15,7 +15,14 @@
     .contentContainer {
       color: white;
       font-size: 3.5vh;
-      font-weight: 500;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+
+      .icon {
+        font-size: 10px;
+      }
     }
   }
   .bottom {
