@@ -15,10 +15,15 @@ const Footer = () => {
         <div className="slogan">Fishing for data on the blockchain</div>
       </div>
       <div className="right">
-        <div className="item">
-          <img src={Discordlogo} alt="" className="svgIcon" />
-          Discord
-        </div>
+        <a
+          href="https://discord.gg/zmrpWJH7"
+          style={{ textDecoration: "none" }}
+        >
+          <div className="item">
+            <img src={Discordlogo} alt="" className="svgIcon" />
+            Discord
+          </div>
+        </a>
         {/* <div className="item">
           <TwitterIcon className="icon" />
           Twitter
