@@ -1,7 +1,7 @@
 import WarningIcon from "@mui/icons-material/Warning";
 
 export const userColumns = [
-  { field: "id", headerName: "Wallet", flex: 1 },
+  { field: "id", headerName: "Wallet", flex: 2 },
   {
     field: "totalSupplied",
     headerName: "Total Supplied (USD)",
