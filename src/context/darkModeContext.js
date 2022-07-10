@@ -12,7 +12,6 @@ export const DarkModeContextProvider = ({ children }) => {
 
   useEffect(() => {
     localStorage.setItem("darkMode", JSON.stringify(state.darkMode));
-    console.log(state.darkMode);
   }, [state.darkMode]);
 
   return (
