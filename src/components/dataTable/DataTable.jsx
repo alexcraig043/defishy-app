@@ -29,30 +29,12 @@ const DataTable = () => {
         );
         const q = await query(dbRef, limitToLast(1000));
 
-        get(q)
-          .then((snapshot) => {
-            if (snapshot.exists()) {
-              const keys = Object.keys(snapshot.val());
-              keys.forEach((key) => {
-                setTableData((tableData) => [
-                  ...tableData,
-                  { id: key, ...snapshot.child(`${key}`).val() },
-                ]);
-                console.log(tableData);
-                // list.push({ id: key, ...snapshot.child(`${key}`).val() });
-              });
-            } else {
-              console.log("No data available");
-            }
-          })
-          .catch((error) => {
-            console.error(error);
-          });
-        console.log(tableData);
-        // onChildAdded(q, (snapshot) => {
-        //   list.push({ id: snapshot.key, ...snapshot.val() });
-        // });
-        setTableData(list);
+        onChildAdded(q, (snapshot) => {
+          setTableData((tableData) => [
+            ...tableData,
+            { id: snapshot.key, ...snapshot.val() },
+          ]);
+        });
       } catch (err) {
         console.log(err);
       }
