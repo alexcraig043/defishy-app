@@ -15,7 +15,7 @@ const Footer = () => {
             {/* <span className="title">defishy</span> */}
           </div>
         </Link>
-        <div className="slogan">Fishing for data on the blockchain</div>
+        <div className="slogan">Fishing for blockchain data</div>
       </div>
       <div className="right">
         <a
