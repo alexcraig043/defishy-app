@@ -49,6 +49,10 @@ const DataTable = () => {
           border: "none",
         }}
         className="dataGrid"
+        components={{
+          LoadingOverlay: LinearProgress,
+        }}
+        loading={tableData.length < 1}
         rows={tableData}
         columns={cols}
         pageSize={10}
