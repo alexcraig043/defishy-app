@@ -30,7 +30,7 @@ const DataTable = () => {
         const q = await query(
           addressesRef,
           orderBy("totalDebtETH", "desc"),
-          limit(300)
+          limit(3000)
         );
         const querySnapshot = await getDocs(q);
 
