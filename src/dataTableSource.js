@@ -6,11 +6,27 @@ export const cols = [
     field: "totalCollateralETH",
     headerName: "Total Supplied (USD)",
     flex: 1,
+    renderCell: (params) => {
+      let val = params.row.totalCollateralETH;
+      val = val.toFixed(2);
+      val = val.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
+      val = "$" + val;
+
+      return <div className="money">{val}</div>;
+    },
   },
   {
     field: "totalDebtETH",
     headerName: "Total Borrowed (USD)",
     flex: 1,
+    renderCell: (params) => {
+      let val = params.row.totalDebtETH;
+      val = val.toFixed(2);
+      val = val.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
+      val = "$" + val;
+
+      return <div className="money">{val}</div>;
+    },
   },
   {
     field: "healthFactor",
@@ -46,4 +62,3 @@ export const cols = [
     },
   },
 ];
-

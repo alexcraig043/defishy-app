@@ -50,19 +50,6 @@ const DataTable = () => {
               wallet.totalCollateralETH *= rate;
               wallet.totalDebtETH *= rate;
 
-              wallet.totalCollateralETH = wallet.totalCollateralETH.toFixed(2);
-              wallet.totalDebtETH = wallet.totalDebtETH.toFixed(2);
-
-              wallet.totalCollateralETH = wallet.totalCollateralETH
-                .toString()
-                .replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
-              wallet.totalDebtETH = wallet.totalDebtETH
-                .toString()
-                .replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
-
-              wallet.totalCollateralETH = "$" + wallet.totalCollateralETH;
-              wallet.totalDebtETH = "$" + wallet.totalDebtETH;
-
               setTableData(list);
             });
           })
