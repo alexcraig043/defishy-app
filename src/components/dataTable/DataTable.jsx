@@ -30,7 +30,7 @@ const DataTable = () => {
         const q = await query(
           addressesRef,
           orderBy("totalDebtETH", "desc"),
-          limit(3000)
+          limit(300)
         );
         const querySnapshot = await getDocs(q);
 
@@ -40,18 +40,36 @@ const DataTable = () => {
 
         const axios = require("axios");
         const url = `https://min-api.cryptocompare.com/data/pricemulti?fsyms=ETH&tsyms=USD&api_key=${process.env.CRYPTO_COMPARE_API_KEY}`;
-        let rate;
 
         axios
           .get(url)
           .then((response) => {
-            console.log(response.data.ETH.USD);
+            const rate = response.data.ETH.USD;
+
+            list.forEach((wallet) => {
+              wallet.totalCollateralETH *= rate;
+              wallet.totalDebtETH *= rate;
+
+              wallet.totalCollateralETH = wallet.totalCollateralETH.toFixed(2);
+              wallet.totalDebtETH = wallet.totalDebtETH.toFixed(2);
+
+              wallet.totalCollateralETH = wallet.totalCollateralETH
+                .toString()
+                .replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
+              wallet.totalDebtETH = wallet.totalDebtETH
+                .toString()
+                .replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
+
+              wallet.totalCollateralETH = "$" + wallet.totalCollateralETH;
+              wallet.totalDebtETH = "$" + wallet.totalDebtETH;
+
+              setTableData(list);
+            });
           })
+          .then(() => {})
           .catch((error) => {
             console.log(error);
           });
-
-        setTableData(list);
       } catch (err) {
         console.log(err);
       }
