@@ -1,19 +1,19 @@
 import WarningIcon from "@mui/icons-material/Warning";
 
-export const userColumns = [
+export const cols = [
   { field: "id", headerName: "Wallet", flex: 2 },
   {
-    field: "totalSupplied",
+    field: "totalCollateralETH",
     headerName: "Total Supplied (USD)",
     flex: 1,
   },
   {
-    field: "totalBorrowed",
+    field: "totalDebtETH",
     headerName: "Total Borrowed (USD)",
     flex: 1,
   },
   {
-    field: "health",
+    field: "healthFactor",
     headerName: "Liquidation Health",
     flex: 1,
     renderCell: (params) => {
@@ -21,15 +21,15 @@ export const userColumns = [
       let inDanger = false;
 
       try {
-        if (params.row.health <= 1.1) {
+        if (params.row.healthFactor <= 1.1) {
           health = "poor";
-        } else if (params.row.health > 1.5) {
+        } else if (params.row.healthFactor > 1.5) {
           health = "good";
         } else {
           health = "moderate";
         }
 
-        if (params.row.health <= 1) {
+        if (params.row.healthFactor <= 1) {
           inDanger = true;
         }
       } catch (err) {
@@ -39,7 +39,7 @@ export const userColumns = [
 
       return (
         <div className={"healthCell"}>
-          <div className={`health ${health}`}>{params.row.health}</div>
+          <div className={`health ${health}`}>{params.row.healthFactor}</div>
           {inDanger ? <WarningIcon className="icon" /> : <></>}
         </div>
       );
@@ -51,74 +51,74 @@ export const userColumns = [
 export const userRows = [
   {
     id: "0x0E93388CD7a1Ec5f80A60EE3bc593C7Bc4CCd081",
-    totalSupplied: "$1,953,128",
-    totalBorrowed: "$1,353,128",
-    health: 1.1,
+    totalCollateralEth: "$1,953,128",
+    totalDebtEth: "$1,353,128",
+    healthFactor: 1.1,
   },
   {
     id: "0x0E93388CD7a1Ec5f80A60EE3bc593C7Bc4CCd082",
-    totalSupplied: "$1,953,128",
-    totalBorrowed: "$1,353,128",
-    health: 0.8,
+    totalCollateralEth: "$1,953,128",
+    totalDebtEth: "$1,353,128",
+    healthFactor: 0.8,
   },
   {
     id: "0x0E93388CD7a1Ec5f80A60EE3bc593C7Bc4CCd083",
-    totalSupplied: "$1,953,128",
-    totalBorrowed: "$1,353,128",
-    health: 0.6,
+    totalCollateralEth: "$1,953,128",
+    totalDebtEth: "$1,353,128",
+    healthFactor: 0.6,
   },
   {
     id: "0x0E93388CD7a1Ec5f80A60EE3bc593C7Bc4CCd084",
-    totalSupplied: "$1,953,128",
-    totalBorrowed: "$1,353,128",
-    health: 3.1,
+    totalCollateralEth: "$1,953,128",
+    totalDebtEth: "$1,353,128",
+    healthFactor: 3.1,
   },
   {
     id: "0x0E93388CD7a1Ec5f80A60EE3bc593C7Bc4CCd085",
-    totalSupplied: "$1,953,128",
-    totalBorrowed: "$1,353,128",
-    health: 2.3,
+    totalCollateralEth: "$1,953,128",
+    totalDebtEth: "$1,353,128",
+    healthFactor: 2.3,
   },
   {
     id: "0x0E93388CD7a1Ec5f80A60EE3bc593C7Bc4CCd086",
-    totalSupplied: "$1,953,128",
-    totalBorrowed: "$1,353,128",
-    health: 1.5,
+    totalCollateralEth: "$1,953,128",
+    totalDebtEth: "$1,353,128",
+    healthFactor: 1.5,
   },
   {
     id: "0x0E93388CD7a1Ec5f80A60EE3bc593C7Bc4CCd087",
-    totalSupplied: "$1,953,128",
-    totalBorrowed: "$1,353,128",
-    health: 1.3,
+    totalCollateralEth: "$1,953,128",
+    totalDebtEth: "$1,353,128",
+    healthFactor: 1.3,
   },
   {
     id: "0x0E93388CD7a1Ec5f80A60EE3bc593C7Bc4CCd088",
-    totalSupplied: "$1,953,128",
-    totalBorrowed: "$1,353,128",
-    health: 1.8,
+    totalCollateralEth: "$1,953,128",
+    totalDebtEth: "$1,353,128",
+    healthFactor: 1.8,
   },
   {
     id: "0x0E93388CD7a1Ec5f80A60EE3bc593C7Bc4CCd0839",
-    totalSupplied: "$1,953,128",
-    totalBorrowed: "$1,353,128",
-    health: 1.2,
+    totalCollateralEth: "$1,953,128",
+    totalDebtEth: "$1,353,128",
+    healthFactor: 1.2,
   },
   {
     id: "0x0E93388CD7a1Ec5f80A60EE3bc593C7Bc4CCd093",
-    totalSupplied: "$1,953,128",
-    totalBorrowed: "$1,353,128",
-    health: 1.1,
+    totalCollateralEth: "$1,953,128",
+    totalDebtEth: "$1,353,128",
+    healthFactor: 1.1,
   },
   {
     id: "0x0E93388CD7a1Ec5f80A60EE3bc593C7Bc4CCd094",
-    totalSupplied: "$1,953,128",
-    totalBorrowed: "$1,353,128",
-    health: 1.9,
+    totalCollateralEth: "$1,953,128",
+    totalDebtEth: "$1,353,128",
+    healthFactor: 1.9,
   },
   {
     id: "0x0E93388CD7a1Ec5f80A60EE3bc593C7Bc4CCd095",
-    totalSupplied: "$1,953,128",
-    totalBorrowed: "$1,353,128",
-    health: 1.0,
+    totalCollateralEth: "$1,953,128",
+    totalDebtEth: "$1,353,128",
+    healthFactor: 1.0,
   },
 ];

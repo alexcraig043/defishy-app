@@ -3,10 +3,14 @@ html {
 }
 
 body {
+  background-color: rgb(10, 10, 10);
+}
+
+body {
   @font-face {
     font-family: sans-serif;
     src: "../assets/Avenir Next Font.ttf";
-}
+  }
 }
 
 .app.dark {

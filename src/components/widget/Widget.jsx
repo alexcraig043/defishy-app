@@ -10,6 +10,7 @@ const Widget = ({ type, value }) => {
     case "activeWallets":
       data = {
         title: "Active Wallets",
+        tip: "The number of wallets supplying collateral",
         isMoney: false,
         val: value,
         icon: <InfoOutlinedIcon className="icon" />,
@@ -18,6 +19,7 @@ const Widget = ({ type, value }) => {
     case "riskWallets":
       data = {
         title: "Wallets at Risk",
+        tip: "The number of wallets which are close to liquidation",
         isMoney: false,
         val: value,
         icon: <InfoOutlinedIcon className="icon" />,
@@ -26,6 +28,7 @@ const Widget = ({ type, value }) => {
     case "collateralAtRisk":
       data = {
         title: "Collateral Value at Risk",
+        tip: "The amount of collateral which is close to liquidation",
         isMoney: true,
         val: value,
         icon: <InfoOutlinedIcon className="icon" />,
@@ -46,7 +49,7 @@ const Widget = ({ type, value }) => {
         {data.title}
         <Tooltip
           placement="top"
-          title={data.title}
+          title={data.tip}
           PopperProps={{
             sx: {
               "& .MuiTooltip-tooltip": {

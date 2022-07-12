@@ -25,9 +25,8 @@ const Home = () => {
         <div className="data">
           <DataTable />
         </div>
-        <div className="footer">
-          <Footer />
-        </div>
+        <div className="footer"></div>
+        <Footer />
       </div>
     </div>
   );
