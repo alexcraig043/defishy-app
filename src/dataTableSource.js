@@ -9,7 +9,6 @@ export const cols = [
     renderCell: (params) => {
       let val = params.row.totalCollateralETH;
       val = val.toFixed(2);
-      console.log(val);
       val = Number(val).toLocaleString("en-US");
       val = "$" + val;
 

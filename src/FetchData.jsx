@@ -1,9 +1,5 @@
-import "./dataTable.scss";
-import { DataGrid } from "@mui/x-data-grid";
-import { cols, userRows } from "../../dataTableSource";
-import LinearProgress from "@mui/material/LinearProgress";
-import { useEffect, useState } from "react";
-import { db } from "../../firebase";
+import { db } from "./firebase";
+import { useState, useEffect } from "react";
 import {
   query,
   where,
@@ -14,10 +10,11 @@ import {
   doc,
 } from "firebase/firestore";
 
-const DataTable = ({ rowData }) => {
-  const [tableData, setTableData] = useState([]);
+const FetchData = () => {
+  const [data, setData] = useState({});
 
   useEffect(() => {
+    console.log("hi");
     const fetchData = async () => {
       let list = [];
       try {
@@ -48,11 +45,12 @@ const DataTable = ({ rowData }) => {
             list.forEach((wallet) => {
               wallet.totalCollateralETH *= rate;
               wallet.totalDebtETH *= rate;
+
+              setData({ list: list, ...data });
+              console.log(data);
             });
           })
-          .then(() => {
-            setTableData(list);
-          })
+          .then(() => {})
           .catch((error) => {
             console.log(error);
           });
@@ -63,27 +61,7 @@ const DataTable = ({ rowData }) => {
     fetchData();
   }, []);
 
-  return (
-    <div className="dataTable">
-      <DataGrid
-        sx={{
-          border: "none",
-        }}
-        className="dataGrid"
-        components={{
-          LoadingOverlay: LinearProgress,
-        }}
-        loading={rowData.length < 1}
-        rows={rowData}
-        columns={cols}
-        pageSize={10}
-        rowsPerPageOptions={[5]}
-        disableColumnMenu
-        disableSelectionOnClick
-        autoHeight={true}
-      />
-    </div>
-  );
+  return data;
 };
 
-export default DataTable;
+export default FetchData;

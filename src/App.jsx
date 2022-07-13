@@ -1,4 +1,4 @@
-import Home from "./pages/aave-eth/Home.jsx";
+import AaveEth from "./pages/aave-eth/AaveEth.jsx";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import "./style/dark.scss";
 import { useContext } from "react";
@@ -12,7 +12,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/">
-            <Route index element={<Home />} />
+            <Route index element={<AaveEth />} />
           </Route>
         </Routes>
       </BrowserRouter>
