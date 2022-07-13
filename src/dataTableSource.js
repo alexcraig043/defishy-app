@@ -9,7 +9,8 @@ export const cols = [
     renderCell: (params) => {
       let val = params.row.totalCollateralETH;
       val = val.toFixed(2);
-      val = val.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
+      console.log(val);
+      val = Number(val).toLocaleString("en-US");
       val = "$" + val;
 
       return <div className="money">{val}</div>;
@@ -22,7 +23,7 @@ export const cols = [
     renderCell: (params) => {
       let val = params.row.totalDebtETH;
       val = val.toFixed(2);
-      val = val.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
+      val = Number(val).toLocaleString("en-US");
       val = "$" + val;
 
       return <div className="money">{val}</div>;
