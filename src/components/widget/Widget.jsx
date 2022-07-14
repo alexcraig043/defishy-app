@@ -71,8 +71,8 @@ const Widget = ({ type, value }) => {
         </Tooltip>
       </span>
       <span className="counter">
-        {data.isMoney && "$"}
-        {data.val}
+        {data.isMoney && data.val && "$"}
+        {data.val && Number(data.val).toLocaleString("en-US")}
       </span>
     </div>
   );

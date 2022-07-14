@@ -1,16 +1,14 @@
 {
   "files": {
-    "main.css": "/static/css/main.48dd478b.css",
-    "main.js": "/static/js/main.75233fe3.js",
+    "main.css": "/static/css/main.036c4725.css",
+    "main.js": "/static/js/main.6c114cc8.js",
     "static/media/AavelogoPNG.png": "/static/media/AavelogoPNG.e148933d7b972825cb5d.png",
     "static/media/DefishylogoPNG.png": "/static/media/DefishylogoPNG.f25279033a6bf365a8eb.png",
     "static/media/Discordlogo.svg": "/static/media/Discordlogo.9a823ca6b8fc45606216d185eb2ba419.svg",
-    "index.html": "/index.html",
-    "main.48dd478b.css.map": "/static/css/main.48dd478b.css.map",
-    "main.75233fe3.js.map": "/static/js/main.75233fe3.js.map"
+    "index.html": "/index.html"
   },
   "entrypoints": [
-    "static/css/main.48dd478b.css",
-    "static/js/main.75233fe3.js"
+    "static/css/main.036c4725.css",
+    "static/js/main.6c114cc8.js"
   ]
 }

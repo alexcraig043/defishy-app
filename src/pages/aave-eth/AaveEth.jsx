@@ -36,15 +36,9 @@ const AaveEth = () => {
           console.log("Cannot find pool!");
         } else {
           setWidetData({
-            totalWallets: Number(poolSnap.data().totalWallets).toLocaleString(
-              "en-US"
-            ),
-            totalDebt: Number(
-              poolSnap.data().totalDebt.toFixed(2)
-            ).toLocaleString("en-US"),
-            walletsAtRisk: Number(poolSnap.data().walletsAtRisk).toLocaleString(
-              "en-US"
-            ),
+            totalWallets: poolSnap.data().totalWallets,
+            totalDebt: poolSnap.data().totalDebt.toFixed(2),
+            walletsAtRisk: poolSnap.data().walletsAtRisk,
           });
         }
 
