@@ -16,7 +16,7 @@ const Widget = ({ type, value }) => {
         icon: <InfoOutlinedIcon className="icon" />,
       };
       break;
-    case "riskWallets":
+    case "walletsAtRisk":
       data = {
         title: "Wallets at Risk",
         tip: "The number of wallets which are close to liquidation",
@@ -29,6 +29,15 @@ const Widget = ({ type, value }) => {
       data = {
         title: "Collateral Value at Risk",
         tip: "The amount of collateral which is close to liquidation",
+        isMoney: true,
+        val: value,
+        icon: <InfoOutlinedIcon className="icon" />,
+      };
+      break;
+    case "totalDebt":
+      data = {
+        title: "Total Debt",
+        tip: "The sum of all debt positions",
         isMoney: true,
         val: value,
         icon: <InfoOutlinedIcon className="icon" />,

@@ -39,6 +39,12 @@ const AaveEth = () => {
             totalWallets: Number(poolSnap.data().totalWallets).toLocaleString(
               "en-US"
             ),
+            totalDebt: Number(
+              poolSnap.data().totalDebt.toFixed(2)
+            ).toLocaleString("en-US"),
+            walletsAtRisk: Number(poolSnap.data().walletsAtRisk).toLocaleString(
+              "en-US"
+            ),
           });
         }
 
@@ -94,8 +100,8 @@ const AaveEth = () => {
         </div>
         <div className="widgets">
           <Widget type="activeWallets" value={widgetData.totalWallets} />
-          <Widget type="riskWallets" value="4" />
-          <Widget type="collateralAtRisk" value="5.6M" />
+          <Widget type="walletsAtRisk" value={widgetData.walletsAtRisk} />
+          <Widget type="totalDebt" value={widgetData.totalDebt} />
         </div>
         <div className="data">
           <DataTable rowData={rows} />

@@ -1,4 +1,5 @@
 import WarningIcon from "@mui/icons-material/Warning";
+import { Tooltip } from "@mui/material";
 
 export const cols = [
   { field: "id", headerName: "Wallet", flex: 2 },
@@ -37,7 +38,7 @@ export const cols = [
       let inDanger = false;
 
       try {
-        if (params.row.healthFactor <= 1.1) {
+        if (params.row.healthFactor <= 1.2) {
           health = "poor";
         } else if (params.row.healthFactor > 1.5) {
           health = "good";
@@ -55,8 +56,26 @@ export const cols = [
 
       return (
         <div className={"healthCell"}>
-          <div className={`health ${health}`}>{params.row.healthFactor}</div>
-          {inDanger ? <WarningIcon className="icon" /> : <></>}
+          <div className={`health ${health}`}>
+            {params.row.healthFactor.toFixed(2)}
+          </div>
+          {inDanger ? (
+            <Tooltip
+              placement="top"
+              title="Liquidation health is less than or equal to 1"
+              PopperProps={{
+                sx: {
+                  "& .MuiTooltip-tooltip": {
+                    fontWeight: "300",
+                  },
+                },
+              }}
+            >
+              <WarningIcon className="icon" />
+            </Tooltip>
+          ) : (
+            <></>
+          )}
         </div>
       );
     },
