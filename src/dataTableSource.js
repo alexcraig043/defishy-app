@@ -38,6 +38,7 @@ export const cols = [
       let inDanger = false;
 
       try {
+        // red < 1.2, green > 1.5, yellow in between
         if (params.row.healthFactor < 1.2) {
           health = "poor";
         } else if (params.row.healthFactor > 1.5) {
