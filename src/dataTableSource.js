@@ -38,7 +38,7 @@ export const cols = [
       let inDanger = false;
 
       try {
-        if (params.row.healthFactor <= 1.2) {
+        if (params.row.healthFactor < 1.2) {
           health = "poor";
         } else if (params.row.healthFactor > 1.5) {
           health = "good";

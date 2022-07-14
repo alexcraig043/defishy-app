@@ -19,7 +19,7 @@ const Widget = ({ type, value }) => {
     case "walletsAtRisk":
       data = {
         title: "Wallets at Risk",
-        tip: "The number of wallets with a liquidation health of 1.2 or less",
+        tip: "The number of wallets with a liquidation health less than 1.2",
         isMoney: false,
         val: value,
         icon: <InfoOutlinedIcon className="icon" />,
