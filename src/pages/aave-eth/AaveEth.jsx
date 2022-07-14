@@ -20,11 +20,12 @@ import {
 
 const AaveEth = () => {
   const [rows, setRows] = useState([]);
-  const [widgetData, setWidetData] = useState({});
+  const [widgetData, setWidgetData] = useState({});
 
   useEffect(() => {
     const fetchData = async () => {
       let list = [];
+      let fields = {};
       try {
         const poolRef = doc(
           db,
@@ -35,11 +36,9 @@ const AaveEth = () => {
         if (!poolSnap.exists) {
           console.log("Cannot find pool!");
         } else {
-          setWidetData({
-            totalWallets: poolSnap.data().totalWallets,
-            totalDebt: poolSnap.data().totalDebt.toFixed(2),
-            walletsAtRisk: poolSnap.data().walletsAtRisk,
-          });
+          fields.totalWallets = poolSnap.data().totalWallets;
+          fields.walletsAtRisk = poolSnap.data().walletsAtRisk;
+          fields.totalDebt = poolSnap.data().totalDebt;
         }
 
         const addressesRef = collection(
@@ -64,6 +63,8 @@ const AaveEth = () => {
           .then((response) => {
             const rate = response.data.ETH.USD;
 
+            fields.totalDebt = (fields.totalDebt * rate).toFixed(2);
+
             list.forEach((wallet) => {
               wallet.totalCollateralETH *= rate;
               wallet.totalDebtETH *= rate;
@@ -71,6 +72,7 @@ const AaveEth = () => {
           })
           .then(() => {
             setRows(list);
+            setWidgetData(fields);
           })
           .catch((error) => {
             console.log(error);
