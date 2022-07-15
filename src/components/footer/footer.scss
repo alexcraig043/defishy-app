@@ -3,7 +3,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 8vh;
+  height: 60px;
   padding: 30px 60px;
   padding-top: 30px;
 
@@ -11,8 +11,8 @@
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    gap: 1.5vh;
-    
+    gap: 10px;
+
     .defishyLogo {
       display: flex;
       align-items: center;
@@ -20,10 +20,10 @@
       .title {
         color: #533cd9;
         font-weight: 700;
-        font-size: 3vh;
+        font-size: 30px;
       }
       .logo {
-        height: 5vh;
+        height: 40px;
         width: auto;
         object-fit: cover;
       }
