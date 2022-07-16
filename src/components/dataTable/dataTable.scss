@@ -1,10 +1,17 @@
 .dataTable {
   padding: 0px;
-  background-color: #101010;
+  background-color: #181818;
   border-radius: 15px;
   border: 0.5px #222 solid;
   display: flex;
   flex-direction: column;
+
+  hr {
+    border: 1px solid gray;
+    width: 95.5%;
+    background-color: #181818;
+    align-self: center;
+  }
 
   .dataGrid {
     &.MuiDataGrid-root .MuiDataGrid-columnHeader:focus,
@@ -23,24 +30,32 @@
     }
 
     .MuiDataGrid-columnHeaders {
-      background-color: #181818;
       border-bottom: none;
-      border-radius: 10px 10px 0px 0px;
+      border-radius: 0px;
       padding: 0px 20px;
-      .MuiDataGrid-columnHeader {
-        font-size: 14px;
-        font-weight: 200;
-        color: gray;
+    }
+
+    .columnHeader {
+      font-size: 14px;
+      font-weight: 400;
+      color: gray;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      .icon {
+        font-size: 15px;
       }
     }
 
     .MuiDataGrid-virtualScrollerContent {
       padding: 15px 20px;
       padding-bottom: 0px;
+      background-color: #101010;
     }
 
     .MuiToolbar-root {
       color: gray;
+      background-color: #101010;
     }
 
     .MuiDataGrid-cell {
@@ -52,6 +67,7 @@
     }
 
     .MuiDataGrid-footerContainer {
+      background-color: #101010;
       border: none;
     }
 

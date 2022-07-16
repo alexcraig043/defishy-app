@@ -2,21 +2,13 @@ import "./dataTable.scss";
 import { DataGrid } from "@mui/x-data-grid";
 import { cols, userRows } from "../../dataTableSource";
 import LinearProgress from "@mui/material/LinearProgress";
-import { useEffect, useState } from "react";
-import { db } from "../../firebase";
-import {
-  query,
-  where,
-  orderBy,
-  limit,
-  collection,
-  getDocs,
-  doc,
-} from "firebase/firestore";
+import DataTableSearch from "../dataTableSearch/DataTableSearch";
 
 const DataTable = ({ rowData }) => {
   return (
     <div className="dataTable">
+      {/* <DataTableSearch />
+      <hr /> */}
       <DataGrid
         sx={{
           border: "none",
