@@ -1,10 +1,10 @@
 .dataTable {
   padding: 0px;
-  background-color: #181818;
   border-radius: 15px;
   border: 0.5px #222 solid;
   display: flex;
   flex-direction: column;
+  background-color: #101010;
 
   hr {
     border: 1px solid gray;
@@ -30,8 +30,9 @@
     }
 
     .MuiDataGrid-columnHeaders {
+      background-color: #181818;
       border-bottom: none;
-      border-radius: 0px;
+      border-radius: 15px 15px 0px 0px;
       padding: 0px 20px;
     }
 
@@ -50,12 +51,10 @@
     .MuiDataGrid-virtualScrollerContent {
       padding: 15px 20px;
       padding-bottom: 0px;
-      background-color: #101010;
     }
 
     .MuiToolbar-root {
       color: gray;
-      background-color: #101010;
     }
 
     .MuiDataGrid-cell {

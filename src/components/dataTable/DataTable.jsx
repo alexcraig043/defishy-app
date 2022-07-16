@@ -18,7 +18,7 @@ const DataTable = ({ rowData }) => {
           LoadingOverlay: LinearProgress,
         }}
         loading={rowData.length < 1}
-        rows={rowData}
+        rows={rowData}  
         columns={cols}
         pageSize={10}
         // rowsPerPageOptions={[10, 25, 50]}
