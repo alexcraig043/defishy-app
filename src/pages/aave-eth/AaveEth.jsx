@@ -19,12 +19,10 @@ import {
 } from "firebase/firestore";
 
 const AaveEth = () => {
-  const [rows, setRows] = useState([]);
   const [widgetData, setWidgetData] = useState({});
 
   useEffect(() => {
     const fetchData = async () => {
-      let list = [];
       let fields = {};
       try {
         const poolRef = doc(
@@ -39,21 +37,10 @@ const AaveEth = () => {
           fields.totalWallets = poolSnap.data().totalWallets;
           fields.walletsAtRisk = poolSnap.data().walletsAtRisk;
           fields.totalDebt = poolSnap.data().totalDebt;
+          fields.aggregateHealthFactor = poolSnap
+            .data()
+            .aggregateHealthFactor.toFixed(3);
         }
-
-        const addressesRef = collection(
-          db,
-          `aave/v2/pools/0x7d2768de32b0b80b7a3454c06bdac94a69ddc7a9/addresses`
-        );
-        const addressesQuery = await query(
-          addressesRef,
-          orderBy("totalDebtETH", "desc"),
-          limit(3000)
-        );
-        const addressesQuerySnapshot = await getDocs(addressesQuery);
-        addressesQuerySnapshot.forEach((doc) => {
-          list.push({ id: doc.id, ...doc.data() });
-        });
 
         const axios = require("axios");
         const url = `https://min-api.cryptocompare.com/data/pricemulti?fsyms=ETH&tsyms=USD&api_key=${process.env.CRYPTO_COMPARE_API_KEY}`;
@@ -62,16 +49,9 @@ const AaveEth = () => {
           .get(url)
           .then((response) => {
             const rate = response.data.ETH.USD;
-
             fields.totalDebt = (fields.totalDebt * rate).toFixed(2);
-
-            list.forEach((wallet) => {
-              wallet.totalCollateralETH *= rate;
-              wallet.totalDebtETH *= rate;
-            });
           })
           .then(() => {
-            setRows(list);
             setWidgetData(fields);
           })
           .catch((error) => {
@@ -97,10 +77,13 @@ const AaveEth = () => {
         <div className="widgets">
           <Widget type="activeWallets" value={widgetData.totalWallets} />
           <Widget type="walletsAtRisk" value={widgetData.walletsAtRisk} />
-          <Widget type="totalDebt" value={widgetData.totalDebt} />
+          <Widget
+            type="aggregateHealthFactor"
+            value={widgetData.aggregateHealthFactor}
+          />
         </div>
         <div className="data">
-          <DataTable rowData={rows} />
+          <DataTable totalRows={widgetData.totalWallets} />
         </div>
         <div className="footer"></div>
         <Footer />

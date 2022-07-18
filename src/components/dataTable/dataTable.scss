@@ -6,11 +6,38 @@
   flex-direction: column;
   background-color: #101010;
 
-  hr {
-    border: 1px solid gray;
-    width: 95.5%;
+  .searchContainer {
     background-color: #181818;
-    align-self: center;
+    border-radius: 15px 15px 0px 0px;
+
+    .search {
+      display: flex;
+      align-items: center;
+      border: none;
+      padding: 3px;
+      justify-content: space-between;
+      margin: 12px 25px;
+      border-radius: none;
+      border-bottom: 1px solid gray;
+
+      input {
+        border: none;
+        outline: none;
+        background-color: transparent;
+        color: gray;
+        font-size: 14px;
+        width: 100%;
+
+        &::placeholder {
+          font-size: 14px;
+          color: gray;
+        }
+      }
+      .icon {
+        color: gray;
+        cursor: pointer;
+      }
+    }
   }
 
   .dataGrid {
@@ -32,7 +59,8 @@
     .MuiDataGrid-columnHeaders {
       background-color: #181818;
       border-bottom: none;
-      border-radius: 15px 15px 0px 0px;
+      // border-radius: 15px 15px 0px 0px;
+      border-radius: 0px;
       padding: 0px 20px;
     }
 
@@ -57,6 +85,14 @@
       color: gray;
     }
 
+    .MuiSvgIcon-root {
+      color: gray;
+    }
+
+    .MuiPaper-elevation {
+      color: green;
+    }
+
     .MuiDataGrid-cell {
       border-bottom: none;
     }
@@ -68,6 +104,7 @@
     .MuiDataGrid-footerContainer {
       background-color: #101010;
       border: none;
+      border-radius: 15px;
     }
 
     .healthCell {
@@ -81,6 +118,8 @@
       .health {
         padding: 3px 8px;
         border-radius: 5px;
+        display: flex;
+        align-items: center;
         &.good {
           background-color: #1fc73b;
         }
@@ -95,6 +134,11 @@
       .icon {
         color: #ff2d2d;
         cursor: pointer;
+      }
+
+      .infinityIcon {
+        color: white;
+        font-size: 18px;
       }
     }
   }

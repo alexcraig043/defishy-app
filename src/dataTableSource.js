@@ -1,10 +1,11 @@
 import WarningIcon from "@mui/icons-material/Warning";
 import { Tooltip } from "@mui/material";
 import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
+import AllInclusiveIcon from "@mui/icons-material/AllInclusive";
 
 export const cols = [
   {
-    field: "id",
+    field: "address",
     renderHeader: () => <div className="columnHeader">Wallet</div>,
     flex: 2,
   },
@@ -65,16 +66,21 @@ export const cols = [
       let inDanger = false;
 
       try {
-        // red < 1.2, green > 1.5, yellow in between
-        if (params.row.healthFactor < 1.2) {
+        const HF = params.row.healthFactor.toFixed(3);
+
+        if (HF < 1.2 && HF > -1) {
           health = "poor";
-        } else if (params.row.healthFactor > 1.5) {
-          health = "good";
-        } else {
+        } else if (HF <= 1.5) {
           health = "moderate";
+        } else {
+          health = "good";
         }
 
-        if (params.row.healthFactor <= 1) {
+        if (HF <= -1.0) {
+          health = "good";
+        }
+
+        if (HF < 1 && HF > -1) {
           inDanger = true;
         }
       } catch (err) {
@@ -85,12 +91,16 @@ export const cols = [
       return (
         <div className={"healthCell"}>
           <div className={`health ${health}`}>
-            {params.row.healthFactor.toFixed(2)}
+            {params.row.healthFactor > -1 ? (
+              params.row.healthFactor.toFixed(3)
+            ) : (
+              <AllInclusiveIcon className="infinityIcon" />
+            )}
           </div>
           {inDanger ? (
             <Tooltip
               placement="top"
-              title="Liquidation health is less than or equal to 1"
+              title="Liquidation health is less than 1!"
               PopperProps={{
                 sx: {
                   "& .MuiTooltip-tooltip": {

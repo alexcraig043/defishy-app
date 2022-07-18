@@ -43,6 +43,15 @@ const Widget = ({ type, value }) => {
         icon: <InfoOutlinedIcon className="icon" />,
       };
       break;
+    case "aggregateHealthFactor":
+      data = {
+        title: "Aggregate Liquidation Health",
+        tip: "The weighted average of all health factors by debt size",
+        isMoney: false,
+        val: value,
+        icon: <InfoOutlinedIcon className="icon" />,
+      };
+      break;
     default:
       data = {
         title: "UNDEFINED",
