@@ -45,7 +45,7 @@ const Widget = ({ type, value }) => {
       break;
     case "aggregateHealthFactor":
       data = {
-        title: "Aggregate Liquidation Health",
+        title: "Aave Aggregate Liquidation Health",
         tip: "The weighted average of all health factors by debt size",
         isMoney: false,
         val: value,

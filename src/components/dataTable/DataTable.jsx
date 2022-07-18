@@ -3,6 +3,7 @@ import { DataGrid } from "@mui/x-data-grid";
 import { cols, userRows } from "../../dataTableSource";
 import LinearProgress from "@mui/material/LinearProgress";
 import SearchIcon from "@mui/icons-material/Search";
+import CloseIcon from "@mui/icons-material/Close";
 import { useState } from "react";
 import { useEffect } from "react";
 import { db } from "../../firebase";
@@ -144,6 +145,7 @@ const DataTable = ({ totalRows }) => {
             limit(size)
           );
         }
+        setRowCount(size);
       } else {
         newPageQuery = await query(
           addressesRef,
@@ -170,26 +172,45 @@ const DataTable = ({ totalRows }) => {
   };
 
   const handleSearch = async () => {
-    setRowCount(pageSize);
-    setIsWalletQuery(true);
-    let addressQuery;
+    try {
+      setRowCount(pageSize);
+      setIsWalletQuery(true);
+      let addressQuery;
 
-    if (searchWallet.length === 42) {
-      addressQuery = await query(
-        addressesRef,
-        where("address", "==", `${searchWallet}`),
-        limit(pageSize)
-      );
-    } else {
-      addressQuery = await query(
-        addressesRef,
-        orderBy("address"),
-        where("address", ">=", `${searchWallet}0`),
-        where("address", "<=", `${searchWallet}z`),
-        limit(pageSize)
-      );
+      if (searchWallet.length === 42) {
+        addressQuery = await query(
+          addressesRef,
+          where("address", "==", `${searchWallet}`),
+          limit(pageSize)
+        );
+      } else {
+        addressQuery = await query(
+          addressesRef,
+          orderBy("address"),
+          where("address", ">=", `${searchWallet}0`),
+          where("address", "<=", `${searchWallet}z`),
+          limit(pageSize)
+        );
+      }
+      getWalletData(addressQuery);
+    } catch (err) {
+      console.log(err);
     }
-    getWalletData(addressQuery);
+  };
+
+  const closeSearch = async () => {
+    try {
+      setIsWalletQuery(false);
+      setRowCount(totalRows);
+      const initQuery = await query(
+        addressesRef,
+        orderBy("totalDebtETH", "desc"),
+        limit(pageSize)
+      );
+      await getWalletData(initQuery);
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   const handleSortModelChange = async (sortModel) => {
@@ -239,6 +260,11 @@ const DataTable = ({ totalRows }) => {
             onKeyDown={handleKeyDown}
             onChange={handleInput}
           />
+          {isWalletQuery ? (
+            <CloseIcon className="icon" onClick={closeSearch} />
+          ) : (
+            <></>
+          )}
           <SearchIcon className="icon" onClick={handleSearch} />
         </div>
       </div>
