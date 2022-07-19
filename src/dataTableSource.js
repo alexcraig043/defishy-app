@@ -5,7 +5,7 @@ import AllInclusiveIcon from "@mui/icons-material/AllInclusive";
 
 export const cols = [
   {
-    field: "address",
+    field: "id",
     renderHeader: () => <div className="columnHeader">Wallet</div>,
     flex: 2,
   },

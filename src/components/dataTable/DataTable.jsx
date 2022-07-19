@@ -91,6 +91,7 @@ const DataTable = ({ totalRows }) => {
             healthFactor: -1,
           });
         }
+        console.log(list);
         setRows(list);
         setIsLoading(false);
       })
@@ -200,6 +201,7 @@ const DataTable = ({ totalRows }) => {
 
   const closeSearch = async () => {
     try {
+      document.getElementById("searchInput").value = "";
       setIsWalletQuery(false);
       setRowCount(totalRows);
       const initQuery = await query(
@@ -225,6 +227,12 @@ const DataTable = ({ totalRows }) => {
               addressesRef,
               orderBy(`${sortModel[0].field}`, `${sortModel[0].sort}`),
               where("healthFactor", ">", -1),
+              limit(pageSize)
+            );
+          } else if (sortModel[0].field === "id") {
+            sortQuery = await query(
+              addressesRef,
+              orderBy("address", `${sortModel[0].sort}`),
               limit(pageSize)
             );
           } else {
@@ -259,6 +267,7 @@ const DataTable = ({ totalRows }) => {
             placeholder="Search Wallet..."
             onKeyDown={handleKeyDown}
             onChange={handleInput}
+            id="searchInput"
           />
           {isWalletQuery ? (
             <CloseIcon className="icon" onClick={closeSearch} />
