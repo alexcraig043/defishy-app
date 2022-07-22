@@ -17,15 +17,15 @@ body {
     background-color: rgb(10, 10, 10);
     .MuiPaper-root {
       background-color: #181818;
-      color: gray;
+      color: #dddddd;
     }
   }
 }
 
 .app.light {
-  background-color: #fafbfc;
+  background-color: #f4f4f4;
   .header {
-    background-color: #e4e4e4;
+    background-color: #ffffff;
     .right {
       .item {
         .icon {
@@ -57,26 +57,26 @@ body {
         color: #101010;
         background-color: transparent;
 
-        -webkit-box-shadow: 0px 0px 15px -5px #101010;
-        box-shadow: 0px 0px 15px -5px #101010;
+        -webkit-box-shadow: 0px 0px 15px -8px #101010;
+        box-shadow: 0px 0px 15px -8px #101010;
 
         &:hover {
-          -webkit-box-shadow: 0px 0px 15px -2px #101010;
-          box-shadow: 0px 0px 15px -2px #101010;
+          -webkit-box-shadow: 0px 0px 15px -6px #101010;
+          box-shadow: 0px 0px 15px -6px #101010;
         }
       }
     }
   }
 
   .widget {
-    background-color: #e4e4e4;
-    border-color: gray;
+    background-color: #ffffff;
+    border-color: #dddddd;
     .title {
-      color: #2a2a2a;
-      font-weight: 400;
+      color: #7d7d7d;
+      font-weight: 200;
     }
     .icon {
-      color: #2a2a2a;
+      color: #7d7d7d;
     }
     .counter {
       color: #2a2a2a;
@@ -84,35 +84,40 @@ body {
   }
 
   .dataTable {
-    background-color: #e4e4e4;
-    border-color: gray;
+    background-color: #ffffff;
+    border-color: #dddddd;
 
     .searchContainer {
-      background-color: #e4e4e4;
-      border-color: #2a2a2a;
+      background-color: #ffffff;
+      border-color: #7d7d7d;
+      color: #7d7d7d;
       input {
-        color: #2a2a2a;
+        color: #7d7d7d;
       }
       .icon {
-        color: #2a2a2a;
+        color: #7d7d7d;
       }
     }
 
     .dataGrid {
       .MuiDataGrid-columnHeaders {
-        background-color: #e4e4e4;
+        background-color: #ffffff;
       }
 
       .MuiButtonBase-root {
         .MuiSvgIcon-root {
-          color: #2a2a2a;
+          color: #7d7d7d;
         }
       }
 
+      .MuiDataGrid-virtualScrollerContent {
+        padding-top: 0px;
+      }
+
       .columnHeader {
-        color: #2a2a2a;
+        color: #7d7d7d;
         .icon {
-          color: #2a2a2a;
+          color: #7d7d7d;
         }
       }
 
@@ -121,20 +126,20 @@ body {
       }
 
       .MuiDataGrid-footerContainer {
-        background-color: #e4e4e4;
+        background-color: #ffffff;
       }
 
       .MuiToolbar-root {
-        color: #2a2a2a;
+        color: #7d7d7d;
       }
     }
   }
 
   .footerContainer {
-    background-color: #e4e4e4;
+    background-color: #ffffff;
     .left {
       .slogan {
-        color: #2a2a2a;
+        color: #7d7d7d;
         font-weight: 300;
       }
     }

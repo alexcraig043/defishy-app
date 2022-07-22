@@ -91,7 +91,6 @@ const DataTable = ({ totalRows }) => {
             healthFactor: -1,
           });
         }
-        console.log(list);
         setRows(list);
         setIsLoading(false);
       })

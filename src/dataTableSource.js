@@ -8,6 +8,9 @@ export const cols = [
     field: "id",
     renderHeader: () => <div className="columnHeader">Wallet</div>,
     flex: 2,
+    renderCell: (params) => {
+      return <div className="wallet">{params.row.id}</div>;
+    },
   },
   {
     field: "totalCollateralETH",

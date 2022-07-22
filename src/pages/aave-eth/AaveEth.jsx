@@ -3,6 +3,7 @@ import Navbar from "../../components/header/Header";
 import Sidebar from "../../components/sidebar/Sidebar";
 import Widget from "../../components/widget/Widget";
 import Aavelogo from "../../assets/AavelogoPNG.png";
+import EulerLogo from "../../assets/EulerLogo.png";
 import Title from "../../components/title/Title";
 import DataTable from "../../components/dataTable/DataTable";
 import Footer from "../../components/footer/Footer";
@@ -68,8 +69,8 @@ const AaveEth = () => {
   return (
     <div className="home">
       {/* <Sidebar /> */}
+      <Navbar logo={Aavelogo} name="Aave" market="Ethereum Market" />
       <div className="homeContainer">
-        <Navbar />
         <div className="titleContainer">
           <Title
             logo={Aavelogo}
