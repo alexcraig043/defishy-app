@@ -1,5 +1,6 @@
 import "./aaveEth.scss";
 import Navbar from "../../components/header/Header";
+import Sidebar from "../../components/sidebar/Sidebar";
 import Widget from "../../components/widget/Widget";
 import Aavelogo from "../../assets/AavelogoPNG.png";
 import Title from "../../components/title/Title";
@@ -66,8 +67,9 @@ const AaveEth = () => {
 
   return (
     <div className="home">
-      <Navbar />
+      {/* <Sidebar /> */}
       <div className="homeContainer">
+        <Navbar />
         <div className="titleContainer">
           <Title
             logo={Aavelogo}
@@ -85,7 +87,6 @@ const AaveEth = () => {
         <div className="data">
           <DataTable totalRows={widgetData.totalWallets} />
         </div>
-        <div className="footer"></div>
         <Footer />
       </div>
     </div>

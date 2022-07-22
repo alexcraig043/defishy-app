@@ -1,10 +1,12 @@
 .home {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
 
   .homeContainer {
     flex: 6;
     overflow-y: auto;
+    border-top: 1px solid rgb(45, 45, 45);
+    border-bottom: 1px solid rgb(45, 45, 45);
 
     .titleContainer {
       padding: 30px 60px;

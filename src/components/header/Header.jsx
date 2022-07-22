@@ -15,7 +15,6 @@ const Header = () => {
     <div className="header">
       <div className="wrapper">
         <div className="right">
-          {" "}
           <Link to="/" style={{ textDecoration: "none" }}>
             <div className="defishyLogo">
               <img src={Defishylogo} className="logo" alt="" />
