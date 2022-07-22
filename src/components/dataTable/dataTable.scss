@@ -46,6 +46,10 @@
       outline: none;
     }
 
+    .muiDataGrid-root {
+      z-index: auto;
+    }
+
     .MuiDataGrid-cell {
       color: white;
     }

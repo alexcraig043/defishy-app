@@ -1,11 +1,16 @@
 import "./footer.scss";
 import Defishylogo from "../../assets/DefishylogoPNG.png";
-import Discordlogo from "../../assets/Discordlogo.svg";
+import DiscordlogoLight from "../../assets/DiscordlogoLight.svg";
+import DiscordlogoDark from "../../assets/DiscordlogoDark.svg";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import ArticleIcon from "@mui/icons-material/Article";
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { DarkModeContext } from "../../context/darkModeContext";
 
 const Footer = () => {
+  const { darkMode } = useContext(DarkModeContext);
+
   return (
     <div className="footerContainer">
       <div className="left">
@@ -25,7 +30,11 @@ const Footer = () => {
           style={{ textDecoration: "none" }}
         >
           <div className="item">
-            <img src={Discordlogo} alt="" className="svgIcon" />
+            <img
+              src={!darkMode ? DiscordlogoDark : DiscordlogoLight}
+              alt=""
+              className="svgIcon"
+            />
             Discord
           </div>
         </a>
@@ -35,10 +44,6 @@ const Footer = () => {
           target="_blank"
           style={{ textDecoration: "none" }}
         >
-          {/* <div className="item">
-          <TwitterIcon className="icon" />
-          Twitter
-        </div> */}
           <div className="item">
             <ArticleIcon className="icon" />
             Docs

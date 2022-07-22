@@ -1,8 +1,10 @@
 .home {
   display: flex;
+  flex-direction: column;
 
   .homeContainer {
     flex: 6;
+    overflow-y: auto;
 
     .titleContainer {
       padding: 30px 60px;

@@ -66,8 +66,8 @@ const AaveEth = () => {
 
   return (
     <div className="home">
+      <Navbar />
       <div className="homeContainer">
-        <Navbar />
         <div className="titleContainer">
           <Title
             logo={Aavelogo}

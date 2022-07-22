@@ -1,0 +1,147 @@
+html {
+  background-color: #101010;
+}
+
+body {
+  @font-face {
+    font-family: sans-serif;
+    src: "../assets/Avenir Next Font.ttf";
+  }
+}
+
+.app.dark {
+  background-color: rgb(10, 10, 10);
+  color: rgb(156, 156, 156);
+
+  body {
+    background-color: rgb(10, 10, 10);
+    .MuiPaper-root {
+      background-color: #181818;
+      color: gray;
+    }
+  }
+}
+
+.app.light {
+  background-color: #fafbfc;
+  .header {
+    background-color: #e4e4e4;
+    .right {
+      .item {
+        .icon {
+          color: #2a2a2a;
+        }
+        .marketSelect {
+          .platformName {
+            color: #2a2a2a;
+            font-weight: 500;
+          }
+        }
+      }
+    }
+  }
+
+  .marketTitle {
+    .left {
+      .top {
+        .contentContainer {
+          color: #2a2a2a;
+        }
+      }
+      .bottom {
+        color: #2a2a2a;
+      }
+    }
+    .right {
+      .howToContainer {
+        color: #101010;
+        background-color: transparent;
+
+        -webkit-box-shadow: 0px 0px 15px -5px #101010;
+        box-shadow: 0px 0px 15px -5px #101010;
+
+        &:hover {
+          -webkit-box-shadow: 0px 0px 15px -2px #101010;
+          box-shadow: 0px 0px 15px -2px #101010;
+        }
+      }
+    }
+  }
+
+  .widget {
+    background-color: #e4e4e4;
+    border-color: gray;
+    .title {
+      color: #2a2a2a;
+      font-weight: 400;
+    }
+    .icon {
+      color: #2a2a2a;
+    }
+    .counter {
+      color: #2a2a2a;
+    }
+  }
+
+  .dataTable {
+    background-color: #e4e4e4;
+    border-color: gray;
+
+    .searchContainer {
+      background-color: #e4e4e4;
+      border-color: #2a2a2a;
+      input {
+        color: #2a2a2a;
+      }
+      .icon {
+        color: #2a2a2a;
+      }
+    }
+
+    .dataGrid {
+      .MuiDataGrid-columnHeaders {
+        background-color: #e4e4e4;
+      }
+
+      .MuiButtonBase-root {
+        .MuiSvgIcon-root {
+          color: #2a2a2a;
+        }
+      }
+
+      .columnHeader {
+        color: #2a2a2a;
+        .icon {
+          color: #2a2a2a;
+        }
+      }
+
+      .MuiDataGrid-cell {
+        color: #2a2a2a;
+      }
+
+      .MuiDataGrid-footerContainer {
+        background-color: #e4e4e4;
+      }
+
+      .MuiToolbar-root {
+        color: #2a2a2a;
+      }
+    }
+  }
+
+  .footerContainer {
+    background-color: #e4e4e4;
+    .left {
+      .slogan {
+        color: #2a2a2a;
+        font-weight: 300;
+      }
+    }
+    .right {
+      .item {
+        color: #2a2a2a;
+      }
+    }
+  }
+}
