@@ -83,6 +83,15 @@
     .MuiDataGrid-virtualScrollerContent {
       padding: 15px 20px;
       padding-bottom: 0px;
+      .MuiDataGrid-row {
+        &:hover {
+          background-color: transparent;
+        }
+      }
+    }
+
+    .wallet {
+      color: white;
     }
 
     .MuiToolbar-root {

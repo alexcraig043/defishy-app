@@ -9,7 +9,18 @@ export const cols = [
     renderHeader: () => <div className="columnHeader">Wallet</div>,
     flex: 2,
     renderCell: (params) => {
-      return <div className="wallet">{params.row.id}</div>;
+      const link = `https://etherscan.io/address/${params.row.id}`;
+
+      return (
+        <a
+          href={link}
+          rel="noreferrer"
+          target="_blank"
+          style={{ textDecoration: "none" }}
+        >
+          <div className="wallet">{params.row.id}</div>
+        </a>
+      );
     },
   },
   {
