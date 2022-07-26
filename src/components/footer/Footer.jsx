@@ -1,5 +1,6 @@
 import "./footer.scss";
-import Defishylogo from "../../assets/DefishylogoPNG.png";
+import DefishylogoLight from "../../assets/DefishylogoLightPNG.png";
+import DefishylogoDark from "../../assets/DefishylogoDarkPNG.png";
 import DiscordlogoLight from "../../assets/DiscordlogoLight.svg";
 import DiscordlogoDark from "../../assets/DiscordlogoDark.svg";
 import TwitterIcon from "@mui/icons-material/Twitter";
@@ -16,7 +17,11 @@ const Footer = () => {
       <div className="left">
         <Link to="/" style={{ textDecoration: "none" }}>
           <div className="defishyLogo">
-            <img src={Defishylogo} className="logo" alt="" />
+            <img
+              src={darkMode ? DefishylogoDark : DefishylogoLight}
+              className="logo"
+              alt=""
+            />
             {/* <span className="title">defishy</span> */}
           </div>
         </Link>
@@ -39,7 +44,7 @@ const Footer = () => {
           </div>
         </a>
         <a
-          href="https://dartmouthblockchain.gitbook.io/defishy.xyz/intro/welcome"
+          href="https://docs.defishy.xyz/intro/welcome"
           rel="noreferrer"
           target="_blank"
           style={{ textDecoration: "none" }}

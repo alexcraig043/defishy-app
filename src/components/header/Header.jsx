@@ -1,7 +1,8 @@
 import "./header.scss";
 import { useContext, useState } from "react";
 import { DarkModeContext } from "../../context/darkModeContext";
-import Defishylogo from "../../assets/DefishylogoPNG.png";
+import DefishylogoLight from "../../assets/DefishylogoLightPNG.png";
+import DefishylogoDark from "../../assets/DefishylogoDarkPNG.png";
 import Aavelogo from "../../assets/AavelogoPNG.png";
 import EulerLogo from "../../assets/EulerLogo.png";
 import CircleIcon from "@mui/icons-material/Circle";
@@ -24,7 +25,11 @@ const Header = ({ logo, name, market }) => {
         <div className="right">
           <Link to="/" style={{ textDecoration: "none" }}>
             <div className="defishyLogo">
-              <img src={Defishylogo} className="logo" alt="" />
+              <img
+                src={darkMode ? DefishylogoDark : DefishylogoLight}
+                className="logo"
+                alt=""
+              />
               {/* <div className="title">defishy</div> */}
             </div>
           </Link>

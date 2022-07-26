@@ -22,7 +22,6 @@ import {
   doc,
   limitToLast,
 } from "firebase/firestore";
-import { PagesRounded } from "@mui/icons-material";
 
 const DataTable = ({ totalRows }) => {
   const [page, setPage] = useState(0);

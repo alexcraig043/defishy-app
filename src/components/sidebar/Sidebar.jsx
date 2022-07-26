@@ -1,5 +1,5 @@
 import "./sidebar.scss";
-import Defishylogo from "../../assets/DefishylogoPNG.png";
+import DefishylogoDark from "../../assets/DefishylogoDarkPNG.png";
 import DiscordlogoLight from "../../assets/DiscordlogoLight.svg";
 import DiscordlogoDark from "../../assets/DiscordlogoDark.svg";
 import TwitterIcon from "@mui/icons-material/Twitter";
@@ -18,7 +18,7 @@ const Sidebar = () => {
         <div className="top">
           <Link to="/" style={{ textDecoration: "none" }}>
             <div className="logo">
-              <img src={Defishylogo} className="logo" alt="" />
+              <img src={DiscordlogoDark} className="logo" alt="" />
             </div>
           </Link>
         </div>

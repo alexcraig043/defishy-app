@@ -20,7 +20,7 @@ const Title = ({ logo, content }) => {
       </div>
       <div className="right">
         <a
-          href="https://dartmouthblockchain.gitbook.io/defishy.xyz/intro/welcome"
+          href="https://docs.defishy.xyz/intro/welcome"
           rel="noreferrer"
           target="_blank"
           style={{ textDecoration: "none" }}
@@ -29,7 +29,7 @@ const Title = ({ logo, content }) => {
             How to Defishy <CircleIcon className="bullet" />
             <ArticleIcon className="icon" />
           </div>
-        </a>  
+        </a>
       </div>
     </div>
   );
