@@ -88,10 +88,17 @@
           background-color: transparent;
         }
       }
+
+      .MuiDataGrid-cell {
+      }
     }
 
     .wallet {
       color: white;
+
+      &:hover {
+        border-bottom: 1px solid white;
+      }
     }
 
     .MuiToolbar-root {

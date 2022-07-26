@@ -31,8 +31,10 @@ export const cols = [
 
     flex: 1,
     renderCell: (params) => {
-      let val = params.row.totalCollateralETH;
-      val = val.toFixed(2);
+      let val = params.row.totalCollateralETH.toFixed(2);
+      if (Number(params.row.totalCollateralETH) > 0 && Number(val) == 0) {
+        val = "~" + val;
+      }
       val = Number(val).toLocaleString("en-US");
       val = "$" + val;
 
@@ -46,8 +48,10 @@ export const cols = [
     ),
     flex: 1,
     renderCell: (params) => {
-      let val = params.row.totalDebtETH;
-      val = val.toFixed(2);
+      let val = params.row.totalDebtETH.toFixed(2);
+      if (Number(params.row.totalDebtETH) > 0 && Number(val) == 0) {
+        val = "~" + val;
+      }
       val = Number(val).toLocaleString("en-US");
       val = "$" + val;
 

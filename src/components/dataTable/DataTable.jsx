@@ -228,6 +228,7 @@ const DataTable = ({ totalRows }) => {
               limit(pageSize)
             );
           } else if (sortModel[0].field === "id") {
+            setSortMode("address");
             sortQuery = await query(
               addressesRef,
               orderBy("address", `${sortModel[0].sort}`),
@@ -303,7 +304,10 @@ const DataTable = ({ totalRows }) => {
           setPageSize(newPageSize);
           handlePageSizeChange(newPageSize);
         }}
-        onSortModelChange={(sortModel) => handleSortModelChange(sortModel)}
+        onSortModelChange={(sortModel) => {
+          setPage(0);
+          handleSortModelChange(sortModel);
+        }}
       />
     </div>
   );
