@@ -17,8 +17,9 @@ export const cols = [
           rel="noreferrer"
           target="_blank"
           style={{ textDecoration: "none" }}
+          className="wallet"
         >
-          <div className="wallet">{params.row.id}</div>
+          {params.row.id}
         </a>
       );
     },

@@ -94,10 +94,24 @@
     }
 
     .wallet {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
       color: white;
 
-      &:hover {
-        border-bottom: 1px solid white;
+      text-decoration: none;
+      background-image: linear-gradient(white, white);
+      background-size: 0% 1px;
+      background-position-y: 100%;
+      background-position-x: 0%;
+      background-repeat: no-repeat;
+      transition: background-size 0.2s ease-in-out;
+      padding-bottom: 2px;
+
+      &:hover,
+      &:focus,
+      &:active {
+        background-size: 100% 1px;
       }
     }
 
